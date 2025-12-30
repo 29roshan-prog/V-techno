@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Techno Academy - India's Leading Commerce Academy | CA, CS, CMA, ACCA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 15px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4F8C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .contact-info-header {
+            display: flex;
+            gap: 30px;
+            font-size: 13px;
+        }
+
+        .contact-info-header span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        nav li {
+            position: relative;
+            flex: 1;
+        }
+
+        nav > ul > li > a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav > ul > li > a:hover {
+            color: #6B2D5C;
+            border-bottom-color: #6B2D5C;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 999;
+            border-top: 3px solid #6B2D5C;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            flex: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f5f5f5;
+            color: #6B2D5C;
+            border-left-color: #6B2D5C;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 60px 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(107, 45, 92, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-tagline {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.85;
+            color: #6B2D5C;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            width: 100vw;
+            height: 450px;
+            object-fit: cover;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            margin-bottom: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* Form Section */
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #6B2D5C;
+            box-shadow: 0 0 0 3px rgba(107, 45, 92, 0.1);
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4F8C 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 45, 92, 0.4);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 60px 50px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 42px;
+            color: #6B2D5C;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 80px 50px;
+            background: white;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4F8C 100%);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid #6B2D5C;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(107, 45, 92, 0.2);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4F8C 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .course-content {
+            padding: 30px;
+        }
+
+        .course-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .course-details {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .course-details li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+
+        .course-details li:last-child {
+            border-bottom: none;
+        }
+
+        .course-details li::before {
+            content: '✓ ';
+            color: #6B2D5C;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .course-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4F8C 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 45, 92, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #6B2D5C;
+            border: 2px solid #6B2D5C;
+        }
+
+        .btn-secondary:hover {
+            background: #6B2D5C;
+            color: white;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 50px;
+            background: #f9f9f9;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .about-stat {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .about-stat h4 {
+            font-size: 28px;
+            color: #6B2D5C;
+            margin-bottom: 10px;
+        }
+
+        .about-stat p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(107, 45, 92, 0.2);
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 80px 50px;
+            background: white;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .trust-item:hover {
+            background: white;
+            box-shadow: 0 8px 20px rgba(107, 45, 92, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .trust-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .trust-item h3 {
+            font-size: 28px;
+            color: #6B2D5C;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .trust-item p {
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 50px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 50px;
+            background: white;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(107, 45, 92, 0.15);
+        }
+
+        .testimonial-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4F8C 100%);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+
+        .testimonial-name {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .testimonial-title {
+            color: #6B2D5C;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .play-button {
+            width: 50px;
+            height: 50px;
+            background: rgba(107, 45, 92, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            padding: 80px 50px;
+            background: #f9f9f9;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .partner-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .partner-logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .partner-item p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* Media Section */
+        .media-section {
+            padding: 80px 50px;
+            background: white;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .media-item {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .media-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(107, 45, 92, 0.1);
+        }
+
+        .media-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .media-item p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 60px 50px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255,255,255,0.8);
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #6B2D5C;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .header-top {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .contact-info-header {
+                flex-direction: column;
+                gap: 5px;
+                font-size: 11px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            nav > ul > li > a {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 40px 20px 0;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .hero-tagline {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .hero-image {
+                height: 300px;
+                margin-bottom: 0;
+            }
+
+            .form-container {
+                margin: 30px 20px;
+                padding: 30px 20px;
+            }
+
+            .form-container h2 {
+                font-size: 18px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                padding: 40px 20px;
+            }
+
+            .stat-item h3 {
+                font-size: 28px;
+            }
+
+            .stat-item p {
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .courses-section,
+            .trust-section,
+            .features-section,
+            .testimonials-section,
+            .partners-section,
+            .media-section {
+                padding: 40px 20px;
+            }
+
+            .about-section {
+                padding: 40px 20px;
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-content h2 {
+                font-size: 24px;
+            }
+
+            .about-content p {
+                font-size: 14px;
+            }
+
+            .about-image {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .courses-grid,
+            .features-grid,
+            .testimonials-grid,
+            .partners-grid,
+            .media-grid,
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-section h3 {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-top {
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+
+            .contact-info-header {
+                width: 100%;
+                flex-direction: row;
+                gap: 8px;
+                font-size: 10px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                overflow-x: auto;
+                padding: 0 10px;
+                gap: 0;
+            }
+
+            nav > ul > li {
+                flex: 0 0 auto;
+            }
+
+            nav > ul > li > a {
+                padding: 10px 10px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 30px 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 20px;
+            }
+
+            .hero-tagline {
+                font-size: 12px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 30px 15px;
+            }
+
+            .stat-item h3 {
+                font-size: 24px;
+            }
+
+            .stat-item p {
+                font-size: 11px;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">V-TECHNO ACADEMY</div>
+            <div class="contact-info-header">
+                <span>📞 +91 6361085746</span>
+                <span>✉️ info@vtechnoacademy.com</span>
+                <span>📱 WhatsApp: 7022882310</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown">
+                <a href="#courses">Courses ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#ca">Chartered Accountancy (CA)</a></li>
+                    <li><a href="#cs">Company Secretary (CS)</a></li>
+                    <li><a href="#cma">CMA India</a></li>
+                    <li><a href="#acca">ACCA</a></li>
+                    <li><a href="#cma-us">CMA USA</a></li>
+                    <li><a href="#cfa">CFA</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#programs">Programs ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#residential">Residential Rankers Program</a></li>
+                    <li><a href="#online">Online Live Classes</a></li>
+                    <li><a href="#recorded">Recorded Classes</a></li>
+                    <li><a href="#hybrid">Hybrid Mode</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">About Us</a></li>
+            <li class="dropdown">
+                <a href="#resources">Resources ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#study">Study Materials</a></li>
+                    <li><a href="#mock">Mock Tests</a></li>
+                    <li><a href="#videos">Video Lectures</a></li>
+                    <li><a href="#notes">Notes & Slides</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#more">More ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#success">Success Stories</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>South India's No. 1 Commerce Academy</h1>
+            <div class="hero-tagline">Think Commerce? Think V-Techno!</div>
+            <div class="hero-subtitle">Expert Coaching for CA, CS, CMA, ACCA & More</div>
+            <img src="hero.png" alt="V-Techno Academy Hero" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <div style="padding: 40px 50px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); position: relative; margin-top: -60px;">
+        <div class="form-container">
+            <h2>Get Your Course Details Now!</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Course *</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select Your Course</option>
+                        <option value="CA Foundation">CA Foundation</option>
+                        <option value="CA Intermediate">CA Intermediate</option>
+                        <option value="CA Final">CA Final</option>
+                        <option value="CS CSEET">CS CSEET</option>
+                        <option value="CS Executive">CS Executive</option>
+                        <option value="CS Professional">CS Professional</option>
+                        <option value="CMA Foundation">CMA Foundation</option>
+                        <option value="CMA Intermediate">CMA Intermediate</option>
+                        <option value="CMA Final">CMA Final</option>
+                        <option value="ACCA">ACCA</option>
+                        <option value="CMA USA">CMA USA</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mode">Mode *</label>
+                    <select id="mode" name="mode" required>
+                        <option value="">Select Learning Mode</option>
+                        <option value="Face to Face">Face to Face Classes</option>
+                        <option value="Live Online">Live Online Classes</option>
+                        <option value="Recorded">Recorded Classes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Mobile Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your mobile number">
+                </div>
+
+                <button type="submit" class="form-button">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-item">
+            <h3>1,00,000+</h3>
+            <p>Students Trained</p>
+        </div>
+        <div class="stat-item">
+            <h3>25+</h3>
+            <p>College Tie-ups</p>
+        </div>
+        <div class="stat-item">
+            <h3>4.8</h3>
+            <p>Rating (86K Reviews)</p>
+        </div>
+        <div class="stat-item">
+            <h3>50+</h3>
+            <p>Qualified Faculty</p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <h2 class="section-title">Our Flagship Courses</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-image">📊</div>
+                <div class="course-content">
+                    <h3 class="course-title">Chartered Accountancy (CA)</h3>
+                    <ul class="course-details">
+                        <li>3 Level Program</li>
+                        <li>14 Papers (3 Levels)</li>
+                        <li>Complete in 4-5 Years</li>
+                    </ul>
+                    <div class="course-buttons">
+                        <button class="btn btn-primary">View Program</button>
+                        <button class="btn btn-secondary">Download Brochure</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">📋</div>
+                <div class="course-content">
+                    <h3 class="course-title">Company Secretary (CS)</h3>
+                    <ul class="course-details">
+                        <li>3 Level Program</li>
+                        <li>19 Papers (3 Levels)</li>
+                        <li>Complete in 3-4 Years</li>
+                    </ul>
+                    <div class="course-buttons">
+                        <button class="btn btn-primary">View Program</button>
+                        <button class="btn btn-secondary">Download Brochure</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">💼</div>
+                <div class="course-content">
+                    <h3 class="course-title">CMA India</h3>
+                    <ul class="course-details">
+                        <li>3 Level Program</li>
+                        <li>20 Papers (2 Levels)</li>
+                        <li>Complete in 3-4 Years</li>
+                    </ul>
+                    <div class="course-buttons">
+                        <button class="btn btn-primary">View Program</button>
+                        <button class="btn btn-secondary">Download Brochure</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">🏆</div>
+                <div class="course-content">
+                    <h3 class="course-title">ACCA</h3>
+                    <ul class="course-details">
+                        <li>4 Level Program</li>
+                        <li>Global Recognition</li>
+                        <li>Complete in 2-3 Years</li>
+                    </ul>
+                    <div class="course-buttons">
+                        <button class="btn btn-primary">View Program</button>
+                        <button class="btn btn-secondary">Download Brochure</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2>About V-Techno Academy</h2>
+            <p>V-Techno Academy is an Ed-Tech company established to offer tutoring services for professional exams and skill development in the commerce stream. We have tied up with various institutions across India to provide integrated programmes and education consultancy.</p>
+            <p>Our mission is to be the one-stop solution for all the needs of the commerce ecosystem, delivering quality education and mentorship to thousands of students every year.</p>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <h4>4.8</h4>
+                    <p>Google Rating</p>
+                </div>
+                <div class="about-stat">
+                    <h4>1,00,000+</h4>
+                    <p>Students Trained</p>
+                </div>
+                <div class="about-stat">
+                    <h4>25+</h4>
+                    <p>College Tie-ups</p>
+                </div>
+                <div class="about-stat">
+                    <h4>10+</h4>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+        <img src="logo.png" alt="V-Techno Academy About us" class="about-image">
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <h2 class="section-title">Why Trust V-Techno Academy</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">📺</div>
+                <h3>90K+</h3>
+                <p>YouTube Subscribers</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">⭐</div>
+                <h3>4.8+</h3>
+                <p>Google Ratings</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🏅</div>
+                <h3>300+</h3>
+                <p>National Ranks</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">✅</div>
+                <h3>Approved</h3>
+                <p>Professional Partner</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">👥</div>
+                <h3>5000+</h3>
+                <p>Daily Learners</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="section-title">Our Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📚</div>
+                <h3>Comprehensive Study Materials</h3>
+                <p>Curated notes, textbooks, and supplementary materials designed by expert faculty members.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📹</div>
+                <h3>Unlimited Recorded Videos</h3>
+                <p>Access unlimited recorded lectures and revision sessions anytime, anywhere.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Expert Faculty</h3>
+                <p>Professionally qualified and highly experienced faculty members with proven track records.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <h3>Personalized Counselling</h3>
+                <p>One-on-one guidance and counselling sessions to address individual learning needs.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🧪</div>
+                <h3>Chapter Wise Mock Tests</h3>
+                <p>Regular chapter-wise and full-length mock tests for comprehensive exam preparation.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📦</div>
+                <h3>Flexible Subscriptions</h3>
+                <p>Choose from various subscription plans based on your schedule and budget requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="section-title">Star Performer Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="play-button">▶</div>
+                <div class="testimonial-image"></div>
+                <div class="testimonial-name">Sreekanth Kumar</div>
+                <div class="testimonial-title">CS Executive (AIR 3)</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="play-button">▶</div>
+                <div class="testimonial-image"></div>
+                <div class="testimonial-name">Vidhatri B N</div>
+                <div class="testimonial-title">CA Foundation (Distinction)</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="play-button">▶</div>
+                <div class="testimonial-image"></div>
+                <div class="testimonial-name">Athul Raj</div>
+                <div class="testimonial-title">ACCA (Middle East Rank 1)</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="play-button">▶</div>
+                <div class="testimonial-image"></div>
+                <div class="testimonial-name">Mariyam Basheer</div>
+                <div class="testimonial-title">ACCA (World Rank 1)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <h2 class="section-title">Institutional Partnerships</h2>
+        <div class="partners-grid">
+            <div class="partner-item">
+                <div class="partner-logo">🎓</div>
+                <p>Christ University, Delhi</p>
+            </div>
+            <div class="partner-item">
+                <div class="partner-logo">🎓</div>
+                <p>St. Joseph's University, Bangalore</p>
+            </div>
+            <div class="partner-item">
+                <div class="partner-logo">🎓</div>
+                <p>St. Claret Degree College, Bangalore</p>
+            </div>
+            <div class="partner-item">
+                <div class="partner-logo">🎓</div>
+                <p>Dempo College of Commerce, Goa</p>
+            </div>
+            <div class="partner-item">
+                <div class="partner-logo">🎓</div>
+                <p>St. Francis Degree College, Bangalore</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="media-section">
+        <h2 class="section-title">Our Media Presence</h2>
+        <div class="media-grid">
+            <div class="media-item">
+                <div class="media-icon">📰</div>
+                <p>V-Techno Student Attains India Rank 1</p>
+            </div>
+            <div class="media-item">
+                <div class="media-icon">📰</div>
+                <p>Exceptional CA Foundation Results</p>
+            </div>
+            <div class="media-item">
+                <div class="media-icon">📰</div>
+                <p>Innovating Finance Education</p>
+            </div>
+            <div class="media-item">
+                <div class="media-icon">📰</div>
+                <p>Learning Partnership with Professional Bodies</p>
+            </div>
+            <div class="media-item">
+                <div class="media-icon">📰</div>
+                <p>Company Profile & Growth Story</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About V-Techno</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#press">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Courses</h3>
+                <ul>
+                    <li><a href="#ca">CA Coaching</a></li>
+                    <li><a href="#cs">CS Coaching</a></li>
+                    <li><a href="#cma">CMA Coaching</a></li>
+                    <li><a href="#acca">ACCA Coaching</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>📞 +91 6361085746</li>
+                    <li>📞 +91 7022882310</li>
+                    <li>📧 info@vtechnoacademy.com</li>
+                    <li>📍 Tumkur, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 V-Techno Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                course: document.getElementById('course').value,
+                mode: document.getElementById('mode').value,
+                phone: document.getElementById('phone').value,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            console.log('Inquiry Submitted:', formData);
+            alert('Thank you! Your inquiry has been received. We will contact you soon at ' + formData.phone);
+            this.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.course-card, .testimonial-card, .partner-item, .media-item, .feature-item, .trust-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
